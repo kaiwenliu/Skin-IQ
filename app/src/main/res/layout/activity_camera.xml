@@ -12,13 +12,13 @@
         android:layout_height="0dp"
         android:layout_marginTop="135dp"
         android:layout_marginBottom="68dp"
-        app:layout_constraintBottom_toTopOf="@+id/analyzeImage"
+        app:layout_constraintBottom_toTopOf="@+id/analyzeImageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/analyzeImage"
+        android:id="@+id/analyzeImageButton"
         android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
@@ -33,6 +33,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/takenPictureImgaeView" />
+        app:layout_constraintTop_toBottomOf="@+id/analyzeImageView" />
 
 </android.support.constraint.ConstraintLayout>

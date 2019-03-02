@@ -15,8 +15,13 @@ import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,28 +31,38 @@ public class CameraActivity extends AppCompatActivity {
 
 
     private ImageView loadedImage;
+    private Button analyzeImageButton;
+    private Bitmap imageUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera);
 
+        analyzeImageButton = findViewById(R.id.analyzeImageButton);
         loadedImage = findViewById(R.id.analyzeImageView);
 
 
         Intent pictureIntent = getIntent();
 
-        if (pictureIntent != null && pictureIntent.getStringExtra("value").equals("uri")) {
-            loadedImage.setImageURI((Uri) pictureIntent.getParcelableExtra("uri"));
+        if (pictureIntent != null) {
+            //loadedImage.setImageURI((Uri) pictureIntent.getParcelableExtra("data"));
+            imageUri = (Bitmap) pictureIntent.getParcelableExtra("data");
+            Picasso.get().load(imageUri).into(loadedImage);
+            Log.e("after intent", pictureIntent.getParcelableExtra("data").toString());
 
-
-        } else if (pictureIntent != null && pictureIntent.getStringExtra("value").equals("bitmap")) {
-            loadedImage.setImageBitmap((Bitmap) pictureIntent.getParcelableExtra("bitmap"));
 
         }
 
 
     }
+
+    private View.OnClickListener analyzeOnClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+        }
+    };
 
 
 }

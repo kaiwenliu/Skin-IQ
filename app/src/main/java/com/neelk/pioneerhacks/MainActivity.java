@@ -109,19 +109,20 @@ public class MainActivity extends AppCompatActivity {
 
             //profilePic.setImageBitmap(imageBitmap);
         }
+        if (imageUri != null) {
+            Intent i = new Intent(MainActivity.this, CameraActivity.class);
+            //Log.e("before start ", imageUri.toString());
+            Bitmap bitmap;
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-        Intent i = new Intent(MainActivity.this, CameraActivity.class);
-        Log.e("before start ", imageUri.toString());
-        Bitmap bitmap;
-        try {
-             bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(),imageUri);
-        } catch (IOException e) {
-            e.printStackTrace();
+            i.putExtra("data", imageUri);
+            Log.e("i", i.toString());
+            startActivity(i);
         }
-
-        i.putExtra("data", imageUri);
-        Log.e("i", i.toString());
-        startActivity(i);
 
 
     }

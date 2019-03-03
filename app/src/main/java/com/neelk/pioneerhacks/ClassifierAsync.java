@@ -42,7 +42,7 @@ public class ClassifierAsync extends AsyncTask<Bitmap, Void, String> {
 
         int[] data = {0, 0, 0, 0, 0, 0, 0, 0};
         try {
-            int[] newData = Classifier.classify(bitmap);
+            int[] newData = Classifier.classify(bitmap, context);
             Log.e("newData", Arrays.toString(newData));
         } catch (IOException e) {
             e.printStackTrace();

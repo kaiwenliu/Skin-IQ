@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Diagnosis"></activity>
+        <activity android:name=".Home"></activity>
+        <activity android:name=".DiseaseInformation" />
+        <activity android:name=".Diagnosis" />
         <activity android:name=".LoginMain" />
         <activity android:name=".CameraActivity" />
         <activity android:name=".MainActivity">

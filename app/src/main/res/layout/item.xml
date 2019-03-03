@@ -27,6 +27,7 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
+            android:backgroundTint="@color/peach"
             android:layout_height="wrap_content">
 
 
@@ -36,6 +37,7 @@
                 android:layout_height="0dp"
                 android:layout_alignParentLeft="true"
                 android:layout_marginEnd="61dp"
+                android:backgroundTint="@color/peach"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/nameTextView"
                 app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +53,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="12dp"
                 android:fontFamily="@font/roboto_thin"
+                android:backgroundTint="@color/peach"
                 android:textColor="@color/black"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toTopOf="@+id/cardViewText"
@@ -68,6 +71,7 @@
                 android:layout_marginBottom="29dp"
                 android:fontFamily="@font/roboto_thin"
                 android:textColor="@color/black"
+                android:backgroundTint="@color/peach"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

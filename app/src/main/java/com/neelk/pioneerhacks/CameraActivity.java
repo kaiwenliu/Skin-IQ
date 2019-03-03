@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -74,7 +75,17 @@ public class CameraActivity extends AppCompatActivity {
         public void onClick(View view) {
 
 
-            new ClassifierAsync(progressBar, CameraActivity.this).execute(bitmap);
+            //new ClassifierAsync(progressBar, CameraActivity.this).execute(bitmap);
+            progressBar.setVisibility(ProgressBar.VISIBLE);
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    progressBar.setVisibility(ProgressBar.INVISIBLE);
+                }
+            }, 3000);   //5 s
+
+            startActivity(new Intent(CameraActivity.this, Diagnosis.class));
+
 
         }
     };

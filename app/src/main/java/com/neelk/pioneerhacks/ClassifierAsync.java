@@ -1,6 +1,7 @@
 package com.neelk.pioneerhacks;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -84,8 +85,9 @@ public class ClassifierAsync extends AsyncTask<Bitmap, Void, String> {
 
 
         progressBar.setVisibility(ProgressBar.INVISIBLE);
-        Toast.makeText(context, disease, Toast.LENGTH_LONG).show();
-
+        Intent intent = new Intent(context, Diagnosis.class);
+        intent.putExtra("disease", disease);
+        context.startActivity(intent);
 
     }
 }

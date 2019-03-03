@@ -11,6 +11,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
@@ -18,6 +19,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -33,12 +35,14 @@ public class MainActivity extends AppCompatActivity {
     private int CAMERA_REQUEST = 200;
     private int GALLERY_REQUEST = 201;
     private int REQUEST_CANCELLED = -1;
+    private BottomNavigationView mBottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setupNavigation();
         takePicture = findViewById(R.id.takePictureButton);
         takePicture.setOnClickListener(takePictureOnClick);
 
@@ -137,6 +141,42 @@ public class MainActivity extends AppCompatActivity {
         if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 3);
         }
+    }
+
+    public void selectFragment(MenuItem item) {
+
+        Intent intent;
+
+        switch (item.getItemId()) {
+
+
+            case R.id.menu_quiz:
+                intent = new Intent(this, DiseaseInformation.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                break;
+
+
+            case R.id.menu_settings:
+                intent = new Intent(this, Settings.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                break;
+
+        }
+    }
+
+    private void setupNavigation() {
+        mBottomNavigationView = findViewById(R.id.navigation_home);
+        mBottomNavigationView.setSelectedItemId(R.id.menu_home);
+        mBottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                selectFragment(item);
+                return true;
+            }
+        });
+
     }
 }
 

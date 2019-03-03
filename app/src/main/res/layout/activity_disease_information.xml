@@ -6,4 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".DiseaseInformation">
 
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/navigation_quiz"
+            android:layout_below="@id/diseaseTextView">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/diseaseTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_thin"
+            android:text="Diseases"
+            android:textSize="40sp" />
+
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation_quiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            app:menu="@menu/navigation_items" />
+
+    </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>

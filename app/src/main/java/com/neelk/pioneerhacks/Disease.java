@@ -4,6 +4,7 @@ public class Disease {
 
     private int resId;
     private String name;
+    private String url;
 
     public int getResId() {
         return resId;
@@ -21,9 +22,18 @@ public class Disease {
         this.name = name;
     }
 
-    public Disease(String name, int resId){
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Disease(String name, int resId, String url){
         this.name = name;
         this.resId = resId;
+        this.url =url;
 
     }
 }

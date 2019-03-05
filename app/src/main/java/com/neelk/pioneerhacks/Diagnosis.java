@@ -15,7 +15,7 @@ public class Diagnosis extends AppCompatActivity {
 
     private TextView result;
     private String diseaseString;
-    private static String[] disease = {"None", "Melanoma", "Dermatofibra", "Nevus"};
+    private static String[] disease = {};
     private static int index = 0;
     private BottomNavigationView mBottomNavigationView;
     private CardView cardView;

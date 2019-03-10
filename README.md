@@ -11,7 +11,7 @@ A lightweight skin cancer diagnosis app
 - Secure Data, Ease of Use, Sense of Comfort
 ## Accomplishing our Goals
 - Android Studio
-- TensorFlow CNN Model Trained with 20,000 Images - 94% Accuracy
+- TensorFlow CNN Model Trained with 2,000 Images - 94% Accuracy
 
 # Usage
 

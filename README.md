@@ -47,7 +47,7 @@ This project is currently open source are free for anyone to contribute. Simply 
 
 * **Kevin Chu** - *Machine Learning* - [kaiwenliu](https://github.com/kaiwenliu)
 * **Kevin Wang** - *Machine Learning* - [wang0324](https://github.com/wang0324)
-* **Neel Kandlikar** - *App* - [neelkandlikar](https://github.com/neelkandlikar)
+* **Neel Kandlikar** - *App + Machine Learning* - [neelkandlikar](https://github.com/neelkandlikar)
 * **Zachary Wang** - *Website* - [zwang695](https://github.com/zwang695)
 
 ## License

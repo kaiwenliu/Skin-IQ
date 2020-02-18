@@ -30,20 +30,20 @@ public class Classifier {
     }
 
     public static int[] classify(Bitmap SkinImage, Context context) throws IOException, InvalidKerasConfigurationException, UnsupportedKerasConfigurationException {
-        // String modelString = new ClassPathResource("skin_classifier.h5").getFile().getPath();
-        // String modelString = "/res/skin_classifier.h5";
-        // String modelString = context.getResources().get
-        // String modelString = cont
-        // String modelString = "/Users/neel/Neel/Android%20Studio%20Projects/PioneerHacks/app/src/main/skin_classifier.h5";
-        //  String modelString = "/app/src/main/skin_classifier.h5"
+        String modelString = new ClassPathResource("skin_classifier.h5").getFile().getPath();
+        String modelString = "/res/skin_classifier.h5";
+        String modelString = context.getResources().get
+        String modelString = cont
+        String modelString = "/Users/neel/Neel/Android%20Studio%20Projects/PioneerHacks/app/src/main/skin_classifier.h5";
+         String modelString = "/app/src/main/skin_classifier.h5"
 
-//        InputStream inputStream = context.getResources().openRawResource(R.raw.skin_classifier);
-//        MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(inputStream);
-//        Bitmap imageToClassify = Bitmap.createScaledBitmap(SkinImage, 224, 224, false);
-//        AndroidNativeImageLoader loader = new AndroidNativeImageLoader();
-//        INDArray input = loader.asMatrix(imageToClassify);
-//        INDArray output = model.output(input);
-//        return NDArrayUtil.toInts(output);
+       InputStream inputStream = context.getResources().openRawResource(R.raw.skin_classifier);
+       MultiLayerNetwork model = KerasModelImport.importKerasSequentialModelAndWeights(inputStream);
+       Bitmap imageToClassify = Bitmap.createScaledBitmap(SkinImage, 224, 224, false);
+       AndroidNativeImageLoader loader = new AndroidNativeImageLoader();
+       INDArray input = loader.asMatrix(imageToClassify);
+       INDArray output = model.output(input);
+       return NDArrayUtil.toInts(output);
 
         //Interpreter tfLite = new Interpreter(loadModelFile());
         return null;
